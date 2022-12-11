@@ -6,11 +6,13 @@
     },
     {
         "ID": "CSE 5331",
-        "name": "DBMS Models and Implementation Techniques"
+        "name": "DBMS Models and Implementation Techniques",
+        "waitlist": "0"
     },
     {
         "ID": "CSE 5333",
-        "name": "Cloud Computing"
+        "name": "Cloud Computing",
+        "waitlist": "0"
     },
     {
         "ID": "CSE 5334",
@@ -19,19 +21,23 @@
     },
     {
         "ID": "CSE 5335",
-        "name": "Web Data Management"
+        "name": "Web Data Management",
+        "waitlist": "0"
     },
     {
         "ID": "CSE 5336",
-        "name": "Stream Data Management"
+        "name": "Stream Data Management",
+        "waitlist": "0"
     },
     {
         "ID": "CSE 5339",
-        "name": "Special Topics in Database Systems"
+        "name": "Special Topics in Database Systems",
+        "waitlist": "0"
     },
     {
         "ID": "CSE 5362",
-        "name": "Social Networks and Search Engines"
+        "name": "Social Networks and Search Engines",
+        "waitlist": "0"
     },
     {
         "ID": "CSE 6331",
