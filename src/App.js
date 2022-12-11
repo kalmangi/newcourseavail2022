@@ -1,11 +1,11 @@
-import './App.css';
+import './styles/App.css';
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
 import Profile from './Profile'
 import Register from './Register'
 import VerifyEmail from './VerifyEmail';
 import Login from './Login'
 import {useState, useEffect} from 'react'
-import {AuthProvider} from './AuthContext'
+import {AuthProvider} from './ContextAuth'
 import {auth} from './firebase'
 import {onAuthStateChanged} from 'firebase/auth'
 import PrivateRoute from './PrivateRoute'

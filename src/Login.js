@@ -1,22 +1,23 @@
 import {useState} from 'react'
 import { Link } from 'react-router-dom'
-import './forms.css'
+import './styles/forms.css'
 import {signInWithEmailAndPassword, sendEmailVerification} from 'firebase/auth'
 import {auth} from './firebase'
 import {useNavigate} from 'react-router-dom'
-import {useAuthValue} from './AuthContext'
+import {useAuthValue} from './ContextAuth'
 
 
 function Login(){
-
+  
+  const navigate = useNavigate()
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('') 
   const [error, setError] = useState('')
   const {setTimeActive} = useAuthValue()
-  const navigate = useNavigate()
+  
 
-  const login = e => {
-    e.preventDefault()
+  const login = event => {
+    event.preventDefault()
     signInWithEmailAndPassword(auth, email, password)
     .then(() => {
       if(!auth.currentUser.emailVerified) {
@@ -25,19 +26,19 @@ function Login(){
           setTimeActive(true)
           navigate('/verify-email')
         })
-      .catch(err => alert(err.message))
+      .catch(error => alert(error.message))
     }else{
       navigate('/')
     }
     })
-    .catch(err => setError(err.message))
+    .catch(error => setError(error.message))
   }
 
   return(
     <div className='center'>
-      <div className='auth'>
+      <div className='main'>
         <h1>Log in</h1>
-        {error && <div className='auth__error'>{error}</div>}
+        {error && <div className='error_message'>{error}</div>}
         <form onSubmit={login} name='login_form'>
           <input 
             type='email' 

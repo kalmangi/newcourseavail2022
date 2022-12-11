@@ -1,4 +1,4 @@
-.auth{
+.main{
   width: 90%;
   max-width: 400px;
   border: 1px solid #dcdcdc;
@@ -6,7 +6,7 @@
   text-align: center;
 }
 
-.auth form{
+.main form{
   display: flex;
   flex-direction: column;
   gap: 15px;
@@ -19,13 +19,13 @@
   margin-bottom: 20px;
 }
 
-.auth__error{
+.error_message{
   padding: 10px 0;
   background-color: hsl(0, 79%, 87%);
   margin-bottom: 20px;
 }
 
-.auth form > input, button{
+.main form > input, button{
   height: 40px;
   font-size: 16px;
   padding: 0 10px;

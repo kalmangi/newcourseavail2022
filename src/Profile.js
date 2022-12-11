@@ -1,9 +1,9 @@
-import './profile.css'
-import {useAuthValue} from './AuthContext'
+import './styles/studentprofile.css'
+import {useAuthValue} from './ContextAuth'
 import { signOut } from 'firebase/auth' 
 import { auth } from './firebase'
 
-function Profile() {
+function StudentProfile() {
   const {currentUser} = useAuthValue()
 
   return (
@@ -19,10 +19,10 @@ function Profile() {
     
         </div>
         <div>
-      <iframe width="450" height="530" allow="microphone;" src="https://console.dialogflow.com/api-client/demo/embedded/9a3d6128-f1bd-4dd7-a9e4-e759b1d70730"></iframe>
+      <iframe width="500" height="530" allow="microphone;" title="chatbot" src="https://console.dialogflow.com/api-client/demo/embedded/9a3d6128-f1bd-4dd7-a9e4-e759b1d70730"></iframe>
       </div>
       </div>
   )
 }
 
-export default Profile
+export default StudentProfile

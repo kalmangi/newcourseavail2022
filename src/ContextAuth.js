@@ -1,15 +1,15 @@
 import React, {useContext} from 'react'
 
-const AuthContext = React.createContext()
+const ContextAuth = React.createContext()
 
 export function AuthProvider({children, value}) {
   return (
-    <AuthContext.Provider value={value}>
+    <ContextAuth.Provider value={value}>
       {children}
-    </AuthContext.Provider>
+    </ContextAuth.Provider>
   )
 }
 
 export function useAuthValue(){
-  return useContext(AuthContext)
+  return useContext(ContextAuth)
 }

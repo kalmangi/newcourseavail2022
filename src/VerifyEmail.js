@@ -1,5 +1,5 @@
 import './verifyEmail.css'
-import {useAuthValue} from './AuthContext'
+import {useAuthValue} from './ContextAuth'
 import {useState, useEffect} from 'react'
 import {auth} from './firebase'
 import {sendEmailVerification} from 'firebase/auth'

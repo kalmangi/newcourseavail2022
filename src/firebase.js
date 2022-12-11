@@ -1,6 +1,7 @@
 import { initializeApp } from 'firebase/app'
-import {getAuth} from 'firebase/auth'
-import { getMessaging, getToken, onMessage } from 'firebase/messaging';
+import { getMessaging, onMessage, getToken,  } from 'firebase/messaging'
+import {getAuth} from 'firebase/auth';
+
 
 const firebaseConfig = {
   apiKey: "AIzaSyBXmCl34LVpTv4aysdMVZ946TgUn7rz-9E",
@@ -22,15 +23,13 @@ export const requestForToken = () => {
   return getToken(messaging, { vapidKey: 'BNQmR9phLCDqiT69cPwb4J_pHrcPAgTKu1ceTlnyg_2jQ8rIEtUVba86zSLG8W1gtUhBOxqFIrPmsgSLkuJFKic' })
     .then((currentToken) => {
       if (currentToken) {
-        console.log('current token for client: ', currentToken);
-        // Perform any other neccessary action with the token
+        console.log('current token: ', currentToken);
       } else {
-        // Show permission request UI
-        console.log('No registration token available. Request permission to generate one.');
+        console.log('No registration token available.');
       }
     })
-    .catch((err) => {
-      console.log('An error occurred while retrieving token. ', err);
+    .catch((error) => {
+      console.log('There is an error occurred while retrieving token. ', error);
     });
 };
 
