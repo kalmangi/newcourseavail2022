@@ -5,6 +5,8 @@
 const axios = require('axios');
 const functions = require('firebase-functions');
 const {WebhookClient} = require('dialogflow-fulfillment');
+const {Card, Suggestion} = require('dialogflow-fulfillment');
+
 
 process.env.DEBUG = 'dialogflow:debug'; // enables lib debugging statements
 
@@ -24,13 +26,14 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
     agent.add(`I'm sorry, can you try again?`);
   }
 
-  
+  // API integration with Dialog flow
   function getfromFirebase(agent){
-    return axios.get(`http://aishwaryak2022.pythonanywhere.com`)
+    axios.get('http://aishwaryak2022.pythonanywhere.com')
     .then((result) => {
-       result.data.map(wordObj => {
-        	agent.add(wordObj.name +':'+ wordObj.name);
-        });
+      let res=JSON.stringify(result.data);
+      res.forEach(e=>{
+      	agent.add(e.ID + ' - ' + e.name);
+      });
     });
   }
 
